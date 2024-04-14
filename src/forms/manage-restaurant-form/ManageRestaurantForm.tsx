@@ -5,6 +5,7 @@ import { z } from "zod";
 import DetailsSection from "./DetailsSection";
 import CuisinesSection from "./CuisinesSection";
 import { Separator } from "@/components/ui/separator";
+import MenuSection from "./MenuSection";
 
 type ManageRestaurantFormProps = {
   onSave: (restaurantFormData: FormData) => void;
@@ -66,6 +67,8 @@ const ManageRestaurantForm = ({
         <DetailsSection />
         <Separator />
         <CuisinesSection />
+        <Separator />
+        <MenuSection />
       </form>
     </Form>
   );
