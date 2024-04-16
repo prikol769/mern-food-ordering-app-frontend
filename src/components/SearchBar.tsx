@@ -72,25 +72,14 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
             </FormItem>
           )}
         />
-
-        {/* <Button
-          onClick={() => {}}
+        <Button
+          onClick={handleReset}
           type="button"
           variant="outline"
           className="rounded-full"
         >
           Reset
-        </Button> */}
-        {form.formState.isDirty && (
-          <Button
-            onClick={handleReset}
-            type="button"
-            variant="outline"
-            className="rounded-full"
-          >
-            Clear
-          </Button>
-        )}
+        </Button>
         <Button type="submit" className="rounded-full bg-orange-500">
           Search
         </Button>
