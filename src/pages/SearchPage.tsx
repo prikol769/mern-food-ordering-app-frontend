@@ -68,10 +68,12 @@ const SearchPage = () => {
   };
 
   if (isLoading) {
-    <span>Loading...</span>;
+    return <span>Loading...</span>;
   }
 
   if (!results?.data || !city) {
+    console.log(results?.data, "results?.data");
+
     return <span>No results found</span>;
   }
 
