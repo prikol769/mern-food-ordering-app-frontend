@@ -72,8 +72,6 @@ const SearchPage = () => {
   }
 
   if (!results?.data || !city) {
-    console.log(results?.data, "results?.data");
-
     return <span>No results found</span>;
   }
 
