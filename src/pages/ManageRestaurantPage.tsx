@@ -28,7 +28,7 @@ const ManageRestaurantPage = () => {
 
       <TabsContent
         value="orders"
-        className="space-y-5 bg-gray-500 pg-10 rounded-lg"
+        className="space-y-5 bg-gray-50 p-10 rounded-lg"
       >
         <h2 className="text-2xl font-bold ">{orders?.length} active orders</h2>
         {orders?.map((order) => (
@@ -37,7 +37,7 @@ const ManageRestaurantPage = () => {
       </TabsContent>
       <TabsContent
         value="manage-restaurant"
-        className="space-y-5 bg-gray-500 pg-10 rounded-lg"
+        className="space-y-5 bg-gray-50 p-10 rounded-lg"
       >
         <ManageRestaurantForm
           onSave={isEditing ? updateRestaurant : createRestaurant}
