@@ -120,10 +120,9 @@ export const useGetMyRestaurantOrders = () => {
   const { getAccessTokenSilently } = useAuth0();
 
   const getMyRestaurantOrdersRequest = async (): Promise<Order[]> => {
-    const accessToken = getAccessTokenSilently();
+    const accessToken = await getAccessTokenSilently();
 
     const response = await fetch(`${API_BASE_URL}/api/my/restaurant/order`, {
-      method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
@@ -131,7 +130,7 @@ export const useGetMyRestaurantOrders = () => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to get restaurant orders");
+      throw new Error("Failed to fetch orders");
     }
 
     return response.json();
@@ -142,10 +141,7 @@ export const useGetMyRestaurantOrders = () => {
     getMyRestaurantOrdersRequest
   );
 
-  return {
-    orders,
-    isLoading,
-  };
+  return { orders, isLoading };
 };
 
 type UpdateOrderStatusRequest = {

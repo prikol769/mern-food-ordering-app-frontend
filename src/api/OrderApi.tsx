@@ -14,6 +14,7 @@ export const useGetMyOrders = () => {
     const response = await fetch(`${API_BASE_URL}/api/order`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -26,13 +27,13 @@ export const useGetMyOrders = () => {
 
   const { data: orders, isLoading } = useQuery(
     "fetchMyOrders",
-    getMyOrdersRequest
+    getMyOrdersRequest,
+    {
+      refetchInterval: 5000,
+    }
   );
 
-  return {
-    orders,
-    isLoading,
-  };
+  return { orders, isLoading };
 };
 
 type CheckoutSessionRequest = {
